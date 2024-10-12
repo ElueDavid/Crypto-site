@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    text-rendering: optimizeSpeed;
+}
+
+:root {
+    --black: #353935;
+    --white: #ffffff;
+
+    --red: #ff0000;
+    --grey: grey;
+    --green: #454B1B;
+    --yellow: #FFBF00;
+}
+
+
+.registration-page-main {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--green);
+}
+
+.registration-page-main section:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    padding: 50px 20px;
+}
+
+.registration-page-main section:nth-of-type(1) h1 {
+    color: var(--white);
+    font-size: 1.9rem;
+    width: 70%;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rp-description-text span {
+    color: var(--yellow);
+}
+
+.registration-page-main section:nth-of-type(1) img {
+    width: 40%;
+    min-width: 200px;
+}
+
+.registration-page-main section:nth-of-type(2) {
+    width: 60%;
+    background-color: var(--white);
+    padding: 50px 30px;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.rp-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.registration-page-main section:nth-of-type(2) h1{
+    font-weight: 400;
+}
+.registration-page-main section:nth-of-type(2) h1 img{
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    position: relative;
+    top: 7px;
+}
+
+.registration-page-main section:nth-of-type(2) .rp-descriptive-text {
+    display: block;
+    color: var(--grey);
+    margin-bottom: 40px;
+}
+
+
+.rp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rp-form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    color: var(--black);
+    border: 1px solid var(--grey);
+    text-indent: 20px;
+    outline-color: var(--green);
+}
+
+.rp-password {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--grey);
+    border-radius: 50px;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.rp-password input {
+    border: none;
+    outline: none;
+    margin: 0;
+}
+
+.rp-form a {
+    display: flex;
+    margin: 10px 10px 50px auto;
+    text-align: right;
+    color: var(--green);
+}
+
+.rp-form button {
+    height: 60px;
+    font-size: 1.2rem;
+    color: var(--white);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: var(--green);
+    cursor: pointer;
+    transition: .5s;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.rp-form button:hover {
+    scale: .99;
+}
+
+.to-rppage {
+    text-align: center;
+}
+
+.to-rppage a {
+    color: var(--green);
+}
+
+
+/* countries select */
+
+.country-select {
+    width: 100%;
+    position: relative;
+}
+
+select {
+    display: none; /* Hide the native select element */
+}
+
+.dropdown {
+    border: 1px solid var(--grey);
+    border-radius: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: .9rem;
+    color: var(--grey);
+    position: relative;
+}
+
+.dropdown::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.dropdown-list div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-list div img {
+    width: 20px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.dropdown-list div:hover {
+    background-color: #f0f0f0;
+}
+
+/* countries select */
+
+
+
+@media (max-width: 800px) {
+
+    .registration-page-main section:nth-of-type(1) {
+        display: none;
+    }
+    .registration-page-main section:nth-of-type(2) {
+        width: 100%;
+        padding: 50px 15px;
+    }
+
+}
