@@ -4,8 +4,381 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Site</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+    <div class="dashboard">
+        <div class="dashboard-sidebar">
+            <div class="ds-logo">
+                Crypto-Excel &#8383; 
+            </div>
+            <section class="ds-links">
+                <a href="Dashboard.html" class="ds-indicator">
+                    <i class="fa-solid fa-house"></i>
+                    <p>
+                        Home
+                    </p>
+                </a>
+                <a href="wallet.html">
+                    <i class="fa-solid fa-wallet"></i>
+                    <p>
+                        Wallet
+                    </p>
+                </a>
+                <a href="swap.html">
+                    <i class="fa-solid fa-right-left"></i>
+                    <p>
+                        Swap
+                    </p>
+                </a>
+                <a href="cards.html">
+                    <i class="fa-regular fa-credit-card"></i>
+                    <p>
+                        Cards
+                    </p>
+                </a>
+                <a href="history.html">
+                    <i class="fa-solid fa-receipt"></i>
+                    <p>
+                        History
+                    </p>
+                </a>
+                <a href="account.html">
+                    <i class="fa-solid fa-user"></i>
+                    <p>
+                        Account
+                    </p>
+                </a>
+            </section>
+            <div class="logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>
+                    Logout
+                </p>
+                <div class="lc-background">
+                    <div class="logout-confirmation">
+                        <h2>
+                            Are you sure you want to log out?
+                        </h2>
+                        <div>
+                            <a class="lc-link" href="#">No</a>
+                            <a class="lc-link" href="index.html">Yes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-main">
+            <nav class="dm-nav">
+                <div class="nav-profile">
+                    <figure>
+                        <img src="assets/images/nftt5626gs7.png" alt="">
+                    </figure>
+                    <p>
+                        Fikayo Olanipekun
+                    </p>
+                </div>
+                <div class="navham">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <section class="dashboard-content-space">
+                <div class="slider-container">
+                    <div class="slick-slider">
+                        <div>
+                            <!-- image design -->
+                            <img class="top-slide-img" src="assets/images/mandala_3576608.png" alt="">
+                            <img class="low-slide-img" src="assets/images/bunting_840974.png" alt="">
+                            <!-- image design -->
+                            
+                            <div class="crypto-coin">
+                                <img src="assets/images/Flag of Nigeria.svg" alt="">
+                                <p>Naira</p>
+                            </div>
+
+                            <div class="asset-balance">
+                                <h2 class="digit">10000</h2>
+                                <p class="asset-currency">
+                                    Naira
+                                </p>
+                                <span class="hide-ac">
+                                    <i class="fa-regular fa-eye"></i>
+                                </span>
+                            </div>
+
+                            <div class="ab-transact">
+                                <a href="wallet.html">Withdraw</a>
+                                <a href="wallet.html">Fund</a>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <!-- image design -->
+                            <img class="top-slide-img" src="assets/images/sky_14854591.png" alt="">
+                            <img class="low-slide-img" src="assets/images/crossing_7942945.png" alt="">
+                            <!-- image design -->
+
+                            <div class="crypto-coin">
+                                <img src="assets/images/tether-usdt-logo.svg" alt="">
+                                <p>USD Tether</p>
+                            </div>
+
+                            <div class="asset-balance">
+                                <h2 class="digit">10000</h2>
+                                <p class="asset-currency">
+                                    USDT
+                                </p>
+                                <span class="hide-ac">
+                                    <i class="fa-regular fa-eye"></i>
+                                </span>
+                            </div>
+
+                            <div class="ab-transact">
+                                <a href="wallet.html">Withdraw</a>
+                                <a href="wallet.html">Fund</a>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <!-- image design -->
+                            <img class="top-slide-img" src="assets/images/mandala_3576608.png" alt="">
+                            <img class="low-slide-img" src="assets/images/bunting_840974.png" alt="">
+                            <!-- image design -->
+
+                            <div class="crypto-coin">
+                                <img src="assets/images/svgexport-22.svg" alt="">
+                                <p>Bitcoin</p>
+                            </div>
+
+                            <div class="asset-balance">
+                                <h2 class="digit">10000</h2>
+                                <p class="asset-currency">
+                                    BTC
+                                </p>
+                                <span class="hide-ac">
+                                    <i class="fa-regular fa-eye"></i>
+                                </span>
+                            </div>
+
+                            <div class="ab-transact">
+                                <a href="wallet.html">Withdraw</a>
+                                <a href="wallet.html">Fund</a>
+                            </div>
+
+                        </div>
+                        <div>
+                            <!-- image design -->
+                            <img class="top-slide-img" src="assets/images/sky_14854591.png" alt="">
+                            <img class="low-slide-img" src="assets/images/mandala_3576608.png" alt="">
+                            <!-- image design -->
+
+                            <div class="crypto-coin">
+                                <img src="assets/images/svgexport-23.svg" alt="">
+                                <p>Ethereum</p>
+                            </div>
+
+                            <div class="asset-balance">
+                                <h2 class="digit">10000</h2>
+                                <p class="asset-currency">
+                                    ETH
+                                </p>
+                                <span class="hide-ac">
+                                    <i class="fa-regular fa-eye"></i>
+                                </span>
+                            </div>
+
+                            <div class="ab-transact">
+                                <a href="wallet.html">Withdraw</a>
+                                <a href="wallet.html">Fund</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- transact now space -->
+                <div class="transaction-space">
+                    <h1 class="ts-subheading">
+                        Transact now
+                    </h1>
+                    <div class="transact-now">
+                        <span>
+                            <img src="assets/images/svgexport-31.svg" alt="">
+                            <p>Buy</p>
+                        </span>
+                        <span>
+                            <img src="assets/images/svgexport-32.svg" alt="">
+                            <p>Sell</p>
+                        </span>
+                    </div>
+
+                    <div class="buy-modal-bg">
+                        <section class="buy-modal-space">
+                            <div class="bm-subheading">
+                                <p>
+                                    Buy Crypto&#8383;
+                                </p>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <form action="">
+                                <div class="receival-space">
+                                    <p class="input-label">Amount to receive</p>
+                                    <div class="transaction-container">
+                                        <input type="text">
+                                        <select>
+                                            <option value="">
+                                                BTC
+                                            </option>
+                                            <option value="">
+                                                TON
+                                            </option>
+                                            <option value="">
+                                                USDT
+                                            </option>
+                                            <option value="">
+                                                ETH
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="payment-space">
+                                    <p class="input-label">Amount to receive</p>
+                                    <div class="transaction-container">
+                                        <input type="text">
+                                        <span>
+                                            max
+                                        </span>
+                                        <select>
+                                            <option value="">
+                                                BTC
+                                            </option>
+                                            <option value="">
+                                                TON
+                                            </option>
+                                            <option value="">
+                                                USDT
+                                            </option>
+                                            <option value="">
+                                                ETH
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="avail-bal">
+                                    Available Balance:
+                                    <span>₦0.00</span>
+                                </p>
+                                <button class="transact-btn" type="submit">
+                                    Buy
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+                    <div class="sell-modal-bg">
+                        <section class="sell-modal-space">
+                            <div class="bm-subheading">
+                                <p>
+                                    Sell Crypto&#8383;
+                                </p>
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <form action=""><div class="payment-space">
+                                <p class="input-label">You Sell</p>
+                                <div class="transaction-container">
+                                    <input type="text">
+                                    <span>
+                                        max
+                                    </span>
+                                    <select>
+                                        <option value="">
+                                            BTC
+                                        </option>
+                                        <option value="">
+                                            TON
+                                        </option>
+                                        <option value="">
+                                            USDT
+                                        </option>
+                                        <option value="">
+                                            ETH
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="avail-bal">
+                                Available Balance:
+                                <span>₦0.00</span>
+                            </p>
+
+                                <div class="receival-space">
+                                    <p class="input-label">Amount to receive</p>
+                                    <div class="transaction-container">
+                                        <input type="text">
+                                        <select>
+                                            <option value="">
+                                                NGN
+                                            </option>
+                                            <option value="">
+                                                USDT
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <button class="transact-btn" type="submit">
+                                    Sell
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+                <!-- transact now space end -->
+                
+
+                <!-- trading view chart -->
+
+                <div class="chart-container">
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_widget"></div>
+                    </div>
+                </div>
+
+                <!-- trading view chart end -->
+            </section>
+
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.slick-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        centerMode: true,
+        centerPadding: '30px',
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+      });
+    });
+  </script>
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/tradingchart.js"></script>
+    <!-- TradingView Library -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </body>
 </html>

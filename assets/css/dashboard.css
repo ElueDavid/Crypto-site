@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    text-rendering: optimizeSpeed;
+    height: 100vh;
+}
+
+:root {
+    --black: #353935;
+    --white: #ffffff;
+
+    --red: #ff0000;
+    --grey: grey;
+    --green: #454B1B;
+    --yellow: #FFBF00;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+/* dashboard navigation */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    /* position: sticky;
+    top: 0px; */
+}
+
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100vh;
+    width: 200px;
+    min-width: 200px;
+    background-color: var(--green);
+    padding: 20px 0 20px 20px;
+}
+
+.ds-logo {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.ds-links {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    gap: 5px;
+}
+
+.ds-links a {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
+    border-radius: 40px 0 0 40px;
+    gap: 20px;
+}
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--red);
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.lc-background {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(195, 194, 194, 0.358);
+    padding: 50px 10px;
+}
+
+.lc-background.active {
+    display: flex;
+}
+
+.logout-confirmation {
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--black);
+}
+.logout-confirmation h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.logout-confirmation div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.logout-confirmation div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 15px 10px;
+}
+.logout-confirmation div a:nth-of-type(1) {
+    background-color: var(--black);
+}
+
+.logout-confirmation div a:nth-of-type(2) {
+    background-color: var(--green);
+}
+
+
+.ds-indicator {
+    background-color: var(--white);
+    color: var(--green);
+}
+
+
+
+.dashboard-main {
+    overflow-y: auto;
+    width: 100%;
+    background-color: #f0eded;
+}
+
+.dm-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--white);
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-profile figure {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.nav-profile figure img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 850px) {
+
+    .dashboard-sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        transition: .5s;
+        cursor: pointer;
+        z-index: 11111;
+    }
+
+    .dashboard-sidebar.show {
+        transform: translateX(0%);
+    }
+
+}
+
+/* dashboard navigation end */
+
+
+.dashboard-content-space {
+    min-height: 80vh;
+    position: relative;
+}
+
+
+/* coming soon style */
+
+.coming-soon {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--green);
+    font-size: 1.8rem;
+}
+.dots::after {
+    content: ".";
+    animation: dots 1.5s steps(3, end) infinite;
+  }
+  
+  @keyframes dots {
+    0% {
+      content: "";
+    }
+    33% {
+      content: ".";
+    }
+    66% {
+      content: "..";
+    }
+    100% {
+      content: "...";
+    }
+  }
+
+/* coming soon style end */
+
+
+
+
+/* slick slider for dashboard */
+
+.slider-container {
+    width: 90%;
+    /* max-width: 600px; */
+    margin: 30px auto 30px auto;
+  }
+
+  .slick-slider {
+    /* height: 200px; */
+  }
+
+  .slick-slide {
+    position: relative;
+    margin: 0 5px;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, 
+    #ffbf00, 
+    #454b1b);
+    overflow: hidden;
+    border-radius: 10px;
+    /* min-height: 200px;
+    max-height: 200px; */
+    padding: 20px;
+  }
+
+  /* Custom slick arrows */
+  .slick-prev, .slick-next {
+    font-size: 30px;
+    color: #333;
+    z-index: 1000;
+  }
+
+  .slick-prev {
+    left: -40px;
+  }
+
+  .slick-next {
+    right: -40px;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: var(--green) !important;
+  }
+
+/* slick slider for dashboard end */
+
+/* asset slide */
+
+.top-slide-img {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 50px;
+    height: fit-content;
+    max-width: 50px;
+    max-height: fit-content;
+}
+.low-slide-img {
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    width: 50px;
+    height: fit-content;
+    max-width: 50px;
+    max-height: fit-content;
+}
+
+
+.crypto-coin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.crypto-coin img {
+    width: 30px;
+    max-width: 30px;
+    height: fit-content;
+}
+
+
+.asset-balance {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+.ab-transact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ab-transact a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--white);
+    width: 50%;
+    transition: .5s;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    z-index: 10;
+}
+.ab-transact a:nth-of-type(1) {
+    background-color: transparent;
+    border-radius: 10px 0 0 10px;
+}
+.ab-transact a:nth-of-type(2) {
+    background-color: var(--white);
+    border-radius: 0 10px 10px 0;
+    color: var(--black);
+}
+
+/* asset slide end */
+
+
+/* dashboard transaction space */
+
+.transaction-space {
+    padding: 0 30px;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+.transaction-space h1 {
+    margin-bottom: 20px;
+}
+
+.transact-now {
+    display: flex;
+    gap: 10px;
+}
+
+.transact-now span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 60px;
+    background-color: #f7fee7;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.transact-now span:nth-of-type(2) {
+    background-color: #f0fdf4;
+}
+
+.transact-now span img {
+    width: 20px;
+    max-width: 20px;
+    max-height: fit-content;
+    margin-bottom: 1px;
+}
+
+
+.buy-modal-bg, .sell-modal-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(195, 194, 194, 0.358);
+    padding: 50px 10px;
+    z-index: 1000;
+}
+
+.buy-modal-space, .sell-modal-space {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.bm-subheading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.bm-subheading .fa-circle-xmark {
+    font-size: 1.4rem;
+    color: var(--red);
+}
+
+.receival-space {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.input-label {
+    font-size: .8rem;
+}
+
+.transaction-container {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+}
+.transaction-container :where(input,select) {
+    border: none;
+    outline: none;
+}
+
+.transaction-container input {
+    display: block;
+    width: 100%;
+}
+
+.transaction-container select {
+    background-color: #cad7cc;
+    border-radius: 3px;
+    height: 25px;
+}
+.transaction-container select option{
+    background-color: #cad7cc;
+}
+
+.transaction-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00d220;
+    height: 25px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.avail-bal {
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+.avail-bal span {
+    font-size: 1rem;
+    color: #00d220;
+}
+
+.transact-btn {
+    width: 100%;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+/* dashboard transaction space end */
+
+
+/* TradingView Widget Styling */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Full height of the viewport */
+    padding: 0 40px;
+    margin: 0 0 60px 0;
+    background-color: #f0eded; /* Background color */
+}
+
+.tradingview-widget-container {
+    width: 100%;
+    height: 100%; /* Full height of the container */
+    background-color: #f0eded; /* Ensure widget wrapper inherits background */
+    overflow: hidden;
+}
+
+#tradingview_widget {
+    width: 100%;
+    height: 100%; /* Full height of the widget */
+}
+
+@media (max-width: 768px) {
+    #tradingview_widget {
+        height: 100%; /* Maintain full height on smaller screens */
+    }
+
+    .chart-container {
+        padding: 0 20px;
+    }
+}
