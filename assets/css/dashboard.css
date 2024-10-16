@@ -282,23 +282,22 @@ a {
 
 /* asset slide */
 
-.top-slide-img {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 50px;
-    height: fit-content;
-    max-width: 50px;
-    max-height: fit-content;
-}
+.top-slide-img, 
 .low-slide-img {
     position: absolute;
+    width: 100%; /* Ensure the image fills its container */
+    max-width: 50px; /* Restrict the max size */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+}
+
+.top-slide-img {
+    top: -5px;
+    right: -5px;
+}
+.low-slide-img {
     bottom: -5px;
     left: -5px;
-    width: 50px;
-    height: fit-content;
-    max-width: 50px;
-    max-height: fit-content;
 }
 
 
@@ -359,6 +358,15 @@ a {
     background-color: var(--white);
     border-radius: 0 10px 10px 0;
     color: var(--black);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .top-slide-img, 
+    .low-slide-img {
+        max-width: 40px;
+        height: auto;
+    }
 }
 
 /* asset slide end */
