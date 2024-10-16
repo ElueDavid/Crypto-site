@@ -241,23 +241,29 @@ a {
 
 .slider-container {
     width: 90%;
-    /* max-width: 600px; */
-    margin: 30px auto 30px auto;
-  }
+    margin: 30px auto;
+}
 
+.slick-slider {
+    display: flex; /* Helps with alignment */
+    align-items: stretch; /* Ensures slides take full height */
+}
 
-  .slick-slide {
+.slick-slide {
+    display: flex; /* Ensures content is centered properly */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     margin: 0 5px;
-    height: 100%;
-    background-image: linear-gradient(to bottom right, 
-    #ffbf00, 
-    #454b1b);
+    min-height: 400px; /* Set a minimum height */
+    max-height: 100vh; /* Ensure it doesn't exceed the viewport */
+    background-image: linear-gradient(to bottom right, #ffbf00, #454b1b);
     overflow: hidden;
     border-radius: 10px;
-    max-height: fit-content; 
     padding: clamp(15px, 2vw, 20px);
-  }
+}
+
 
   /* Custom slick arrows */
   .slick-prev, .slick-next {
