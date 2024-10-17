@@ -1,0 +1,408 @@
+
+:root {
+    --black: #353935;
+    --white: #ffffff;
+
+    --red: #ff0000;
+    --grey: grey;
+    --green: #454B1B;
+    --yellow: #FFBF00;
+}
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    height: fit-content !important;
+    min-height: 200px;
+    padding: 20px;
+    color: var(--green);
+  }
+  
+  /* First section (Tabs Navigation) */
+  .tabs-nav {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 250px;
+    padding: 30px 20px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 0 5px 1px #ebebeba6;
+    max-height: fit-content;
+
+  }
+
+  .tabs-nav figure {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--green);
+    overflow: hidden;
+  }
+  .tabs-nav figure img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .tabs-nav .username {
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+
+  .tab-link {
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-link i {
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.2s;
+  }
+  
+  /* Rotate icon slightly on hover */
+  .tab-link:hover i {
+    transform: translateX(5px);
+  }
+  
+  .tab-link.active {
+    background-color: #ddd;
+  }
+
+
+  
+  /* Second section (Tab Content) */
+  .tab-content {
+    width: 75%;
+    display: block;
+    padding: 20px;
+    position: relative;
+    flex-grow: 1;
+    min-height: fit-content;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Content Section */
+  .content-section {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: fit-content;
+  }
+  
+  .content-section.active {
+    display: block;
+    min-height: fit-content;
+  }
+  
+  .back-btn {
+    display: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 850px) {
+    .container {
+      flex-direction: column;
+      padding: 0px;
+    }
+  
+    .tabs-nav {
+      width: 100%;
+      transform: translateX(0); /* Default to visible */
+    }
+  
+    .tabs-nav.hidden {
+      display: none; /* Completely hide the navigation */
+    }
+  
+    .tab-content {
+      width: 100%;
+      display: none; /* Hide content by default on mobile */
+      flex-grow: 1;
+    }
+  
+    .tab-content.active {
+      display: block;
+      min-height: fit-content;
+    }
+  
+    .back-btn {
+      display: inline-block;
+    }
+  }
+  
+
+
+
+  /* tab content style */
+
+  #profile input{
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    text-indent: 10px;
+    border: 1px solid var(--green);
+  }
+
+  #profile .change-name-form, #profile .profile-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+  }
+  #profile .change-name-form {
+    border-bottom: 1px solid var(--grey);
+  }
+
+
+  #profile .change-name-form button {
+    width: fit-content;
+    padding: 10px;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+  }
+
+
+  /* tab content style end */
+
+
+
+
+  .accordion {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .accordion-header {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background-color: #e2e2e2;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #fff;
+    padding: 0 15px;
+  }
+  
+  .accordion-content p {
+    margin: 10px 0;
+  }
+  
+  /* Chevron icon styling */
+  .chevron {
+    transition: transform 0.3s ease;
+  }
+  
+  .active .chevron {
+    transform: rotate(90deg);
+  }
+  
+
+/* accordion end */
+
+
+
+
+/* change password space */
+
+.password-container {
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+}
+
+.password-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.password-group {
+  margin-bottom: 15px;
+}
+
+.password-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-wrapper-current,
+.input-wrapper-new,
+.input-wrapper-confirm {
+  position: relative;
+}
+
+.password-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.icon-toggle-current,
+.icon-toggle-new,
+.icon-toggle-confirm {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.password-container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--green);
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.password-container button:hover {
+  background-color: #0056b3;
+}
+
+
+/* change password space end */
+
+
+
+/* create pin  */
+
+.pin-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+.pin-container .pin-group {
+    margin-bottom: 15px;
+  }
+  
+.pin-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+.pin-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+.pin-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.pin-container button:hover {
+    background-color: var(--black);
+  }
+  
+.pin-container .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    display: none; /* Hide by default */
+  }
+
+/* create pin end */
+
+
+.account-deletion-container form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.account-deletion-container form label{
+    margin-bottom: 20px;
+}
+.account-deletion-container form button{
+    
+}
+
+.account-deletion-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+.account-deletion-container form button:hover {
+    background-color: var(--black);
+  }

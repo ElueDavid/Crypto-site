@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Site</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/account.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -56,16 +57,17 @@
                 <p>
                     Logout
                 </p>
-                <div class="lc-background">
-                    <div class="logout-confirmation">
-                        <h2>
-                            Are you sure you want to log out?
-                        </h2>
-                        <div>
-                            <a class="lc-link" href="#">No</a>
-                            <a class="lc-link" href="index.html">Yes</a>
-                        </div>
-                    </div>
+                
+            </div>
+        </div>
+        <div class="lc-background">
+            <div class="logout-confirmation">
+                <h2>
+                    Are you sure you want to log out?
+                </h2>
+                <div>
+                    <a class="lc-link" href="#">No</a>
+                    <a class="lc-link" href="index.html">Yes</a>
                 </div>
             </div>
         </div>
@@ -84,9 +86,184 @@
                 </div>
             </nav>
 
+            <div class="container">
+                <div class="tabs-nav">
+                    <figure>
+                        <img src="assets/images/nftt5626gs7.png" alt="">
+                    </figure>
+                    <h3 class="username">
+                        Oluwafikayo tunde
+                    </h3>
+                  <button class="tab-link" data-target="profile">
+                    Profile Setting <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <button class="tab-link" data-target="account">
+                    Security Setting <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <button class="tab-link" data-target="help">
+                    Delete Account <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              
+                <div class="tab-content">
+                    <div class="content-section" id="profile">
+                        <button class="back-btn">← Back</button>
+                        <h3>Profile Info</h3>
+                        <form action="" class="change-name-form">
+                            <label>
+                                First Name <br>
+                                <input type="text" value="Oluwafikayo">
+                            </label>
+                            <label>
+                                Last Name <br>
+                                <input type="text" value="Olanipekun" >
+                            </label>
+                            <button type="submit">
+                                Request for name change
+                            </button>
+                        </form>
+                        <form action="" class="profile-info-form">
+                            <label>
+                                User Name <br>
+                                <input type="text" value="fkb1" readonly disabled>
+                            </label>
+                            <label>
+                                Email Address <br>
+                                <input type="email" value="Olanipekun@gmail.com" readonly disabled>
+                            </label>
+                            <label>
+                                Phone Number <br>
+                                <input type="tel" value="Olanipekun" readonly disabled>
+                            </label>
+                            <label>
+                                Country <br>
+                                <input type="text" value="Olanipekun" readonly disabled>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="content-section" id="account">
+                        <button class="back-btn">← Back</button>
+                        <h3>Security Setting</h3>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                              <button class="accordion-header">
+                                Change Password
+                                <i class="fas fa-chevron-right chevron"></i>
+                              </button>
+                                <div class="accordion-content">
+
+                                    <div class="password-container">
+                                        <form class="password-form">
+                                        <div class="password-group">
+                                            <label for="current-password">Current Password</label>
+                                            <div class="input-wrapper-current">
+                                            <input type="password" id="current-password" required>
+                                            <!-- <i class="fas fa-eye-slash icon-toggle-current" data-input="current-password"></i> -->
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="password-group">
+                                            <label for="new-password">New Password</label>
+                                            <div class="input-wrapper-new">
+                                            <input type="password" id="new-password" required>
+                                            <!-- <i class="fas fa-eye-slash icon-toggle-new" data-input="new-password"></i> -->
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="password-group">
+                                            <label for="confirm-password">Confirm Password</label>
+                                            <div class="input-wrapper-confirm">
+                                            <input type="password" id="confirm-password" required>
+                                            <!-- <i class="fas fa-eye-slash icon-toggle-confirm" data-input="confirm-password"></i> -->
+                                            </div>
+                                        </div>
+                                    
+                                        <button type="submit">Change Password</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                          
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                            Create Transaction Pin
+                            <i class="fas fa-chevron-right chevron"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="pin-container">
+                                    <form class="pin-form" id="pinForm">
+                                        <div class="pin-group">
+                                        <label for="transaction-pin">Enter a 6-digit PIN</label>
+                                        <input type="password" id="transaction-pin" maxlength="6" required>
+                                        </div>
+                                
+                                        <div class="pin-group">
+                                        <label for="confirm-pin">Confirm PIN</label>
+                                        <input type="password" id="confirm-pin" maxlength="6" required>
+                                        </div>
+                                
+                                        <button type="submit">Create PIN</button>
+                                        <p id="error-message" class="error-message"></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                          
+                            <!-- <div class="accordion-item">
+                                <button class="accordion-header">
+                                Section 3
+                                <i class="fas fa-chevron-right chevron"></i>
+                                </button>
+                                <div class="accordion-content">
+                                <p>This is the content of Section 3.</p>
+                                </div>
+                            </div> -->
+                        </div>
+                          
+                    </div>
+                    <div class="content-section" id="help">
+                        <button class="back-btn">← Back</button>
+                        <h3>Account Deletion</h3>
+                        <div class="account-deletion-container">
+                            <p>
+                                Kindly select a reason for deleting your account to help us serve you better next time
+                            </p>
+                            <form action="">
+                                <label>
+                                    <input type="radio" name="dlt-acc">
+                                    No longer interested in the service
+                                </label>
+                                <label>
+                                    <input type="radio" name="dlt-acc">
+                                    Just testing around
+                                </label>
+                                <label>
+                                    <input type="radio" name="dlt-acc">
+                                    Gotten a better option
+                                </label>
+                                <label>
+                                    <input type="radio" name="dlt-acc">
+                                    Not satisfied
+                                </label>
+                                <label>
+                                    <input type="radio" name="dlt-acc">
+                                    Other
+                                </label>
+                                <button type="submit">
+                                    Delete account
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              
+
 
         </div>
     </div>
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/account.js"></script>
 </body>
 </html>
