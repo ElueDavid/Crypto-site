@@ -257,6 +257,7 @@ a {
     position: relative;
     margin: 0 5px;
     height: 300px;
+    min-height: 300px;
     max-height: 300px; /* Ensure it doesn't exceed the viewport */
     background-image: linear-gradient(to bottom right, #ffbf00, #454b1b);
     overflow: hidden;
