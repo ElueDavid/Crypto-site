@@ -5,90 +5,369 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Site</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/wallet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- qr code library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
 </head>
 <body>
     <div class="dashboard">
         <div class="dashboard-sidebar">
-            <div class="ds-logo">
-                Crypto-Excel &#8383; 
-            </div>
+            <div class="ds-logo">Crypto-Excel &#8383;</div>
             <section class="ds-links">
-                <a href="Dashboard.html">
-                    <i class="fa-solid fa-house"></i>
-                    <p>
-                        Home
-                    </p>
-                </a>
-                <a href="wallet.html" class="ds-indicator">
-                    <i class="fa-solid fa-wallet"></i>
-                    <p>
-                        Wallet
-                    </p>
-                </a>
-                <a href="swap.html">
-                    <i class="fa-solid fa-right-left"></i>
-                    <p>
-                        Swap
-                    </p>
-                </a>
-                <a href="cards.html">
-                    <i class="fa-regular fa-credit-card"></i>
-                    <p>
-                        Cards
-                    </p>
-                </a>
-                <a href="history.html">
-                    <i class="fa-solid fa-receipt"></i>
-                    <p>
-                        History
-                    </p>
-                </a>
-                <a href="account.html">
-                    <i class="fa-solid fa-user"></i>
-                    <p>
-                        Account
-                    </p>
-                </a>
+                <a href="Dashboard.html"><i class="fa-solid fa-house"></i><p>Home</p></a>
+                <a href="wallet.html" class="ds-indicator"><i class="fa-solid fa-wallet"></i><p>Wallet</p></a>
+                <a href="swap.html"><i class="fa-solid fa-right-left"></i><p>Swap</p></a>
+                <a href="cards.html"><i class="fa-regular fa-credit-card"></i><p>Cards</p></a>
+                <a href="history.html"><i class="fa-solid fa-receipt"></i><p>History</p></a>
+                <a href="account.html"><i class="fa-solid fa-user"></i><p>Account</p></a>
             </section>
-            <div class="logout-link">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <p>
-                    Logout
-                </p>
-            </div>
-        </div>
-
-        <div class="lc-background">
-            <div class="logout-confirmation">
-                <h2>
-                    Are you sure you want to log out?
-                </h2>
-                <div>
-                    <a class="lc-link" href="#">No</a>
-                    <a class="lc-link" href="index.html">Yes</a>
-                </div>
-            </div>
+            <div class="logout-link"><i class="fa-solid fa-right-from-bracket"></i><p>Logout</p></div>
         </div>
 
         <div class="dashboard-main">
             <nav class="dm-nav">
                 <div class="nav-profile">
-                    <figure>
-                        <img src="assets/images/nftt5626gs7.png" alt="">
-                    </figure>
-                    <p>
-                        Fikayo Olanipekun
-                    </p>
+                    <figure><img src="assets/images/nftt5626gs7.png" alt=""></figure>
+                    <p>Fikayo Olanipekun</p>
                 </div>
-                <div class="navham">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+                <div class="navham"><i class="fa-solid fa-bars"></i></div>
             </nav>
+            <section class="wallet-space">
+                <div class="wallet-dashboard">
+                    <img class="wd-top-img" src="assets/images/sky_14854591.png" alt="">
+                    <img class="wd-low-img" src="assets/images/mandala_3576608.png" alt="">
+                    <div class="wd-subheading">
+                        <img src="assets/images/Flag of Nigeria.svg" alt="">
+                        <p>Naira Wallet</p>
+                    </div>
+                    <h1 class="wd-amount">₦0.00</h1>
+                    <div class="wd-btns">
+                        <span id="withdraw-btn">Withdraw</span>
+                        <span id="fund-btn">Fund</span>
+                    </div>
+                </div>
 
-
+                
+                <!-- wallet tabs -->
+                <div class="tab-container">
+                    <div class="tab-header">
+                        <button id="tab1-btn" class="tab-btn active">Fiat Wallet</button>
+                        <button id="tab2-btn" class="tab-btn">Crypto Wallet</button>
+                        <div class="tab-indicator"></div>
+                    </div>
+            
+                    <div class="tab-content" id="tab1-content">
+                        <div class="fiat-wallet-card" id="fiatWalletCard">
+                            <section>
+                                <img src="assets/images/Flag of Nigeria.svg" class="country-img" alt="">
+                                <span>
+                                    <p>Naira Wallet</p>
+                                    <h3>₦0.00</h3>
+                                </span>
+                            </section>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+            
+                    <div class="tab-content hidden" id="tab2-content">
+                        <div class="wallet-card">
+                            <section>
+                                <img src="assets/images/svgexport-22.svg" class="country-img" alt="">
+                                <span>
+                                    <p>BTC Wallet</p>
+                                    <h3>0 BTC</h3>
+                                </span>
+                            </section>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="wallet-card">
+                            <section>
+                                <img src="assets/images/tether-usdt-logo.svg" class="country-img" alt="">
+                                <span>
+                                    <p>USDT Wallet</p>
+                                    <h3>0 USDT</h3>
+                                </span>
+                            </section>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="wallet-card">
+                            <section>
+                                <img src="assets/images/svgexport-55.svg" class="country-img" alt="">
+                                <span>
+                                    <p>Ton Wallet</p>
+                                    <h3>₦0.00</h3>
+                                </span>
+                            </section>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="wallet-card">
+                            <section>
+                                <img src="assets/images/svgexport-23.svg" class="country-img" alt="">
+                                <span>
+                                    <p>Ethereum Wallet</p>
+                                    <h3>0 ETH</h3>
+                                </span>
+                            </section>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <!-- Unique Wallet Card Modal -->
+        <div id="wallet-modal" class="crypto-modal hidden">
+            <div class="unique-wallet-card-template">
+                <div class="wallet-dashboard">
+                    <img class="wd-top-img" src="assets/images/sky_14854591.png" alt="">
+                    <img class="wd-low-img" src="assets/images/mandala_3576608.png" alt="">
+                    <div class="wd-subheading">
+                        <img src="wallet logo image" alt="">
+                        <p>Currency Wallet Name</p>
+                    </div>
+                    <h1 class="wd-amount">Wallet Balance in Digits</h1>
+                    <div class="wd-btns">
+                        <span id="crypto-withdraw-btn" >Withdraw</span>
+                        <span id="crypto-funding-fund-btn">Fund</span>
+                    </div>
+                </div>
+                <div class="crypto-chart-container">
+                    <h2 class="chart-title">Prices</h2>
+                    <canvas id="cryptoChart" class="crypto-chart"></canvas>
+                </div>
+                
+                <div class="crypto-transactions">
+                    <h2>Transaction History</h2>
+                    <div class="table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-10-18</td>
+                                    <td>Deposit</td>
+                                    <td class="status success">Completed</td>
+                                    <td>₦50,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-10-17</td>
+                                    <td>Withdrawal</td>
+                                    <td class="status pending">Pending</td>
+                                    <td>₦20,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-10-15</td>
+                                    <td>Swap (BTC to USDT)</td>
+                                    <td class="status failed">Failed</td>
+                                    <td>₦10,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>  
+                <button class="modal-close" data-modal="wallet-modal">Close</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- fiat wallet modal -->
+
+        <div class="fwm-bg hidden" id="fwmBg">
+            <div class="fiat-wallet-card-modal" id="fiatWalletModal">
+                <div class="wallet-dashboard">
+                    <img class="wd-top-img" src="assets/images/sky_14854591.png" alt="">
+                    <img class="wd-low-img" src="assets/images/mandala_3576608.png" alt="">
+                    <div class="wd-subheading">
+                        <img src="assets/images/Flag of Nigeria.svg" alt="">
+                        <p>Naira Wallet</p>
+                    </div>
+                    <h1 class="wd-amount">₦0.00</h1>
+                    <div class="wd-btns">
+                        <span id="fwm-withdraw-btn">Withdraw</span>
+                        <span id="fwm-fund-btn">Fund</span>
+                    </div>
+                </div>
+                <div class="crypto-transactions">
+                    <h2>Transaction History</h2>
+                    <div class="table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-10-18</td>
+                                    <td>Deposit</td>
+                                    <td class="status success">Completed</td>
+                                    <td>₦50,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-10-17</td>
+                                    <td>Withdrawal</td>
+                                    <td class="status pending">Pending</td>
+                                    <td>₦20,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-10-15</td>
+                                    <td>Swap (BTC to USDT)</td>
+                                    <td class="status failed">Failed</td>
+                                    <td>₦10,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br>
+                    <button class="modal-close" id="closeModalBtn" data-modal="fwmBg">Close</button>
+                </div>  
+            </div>
+        </div>
+
+        <!-- Withdraw Modal -->
+        <div id="withdraw-modal" class="crypto-modal withdraw-modal hidden">
+            <form class="modal-content">
+                <h2>Withdraw Funds</h2>
+                <label for="">
+                    Withdraw Via <br>
+                    <select name="" id="">
+                        <option value="" selected disabled>Choose option</option>
+                        <option value="">Bank Account</option>
+                    </select>
+                </label>
+                <label for="">
+                    Amount <br>
+                    <div class="wf-amount">
+                        <input type="text" placeholder="0.00">
+                        <span>max</span>
+                    </div>
+                </label>
+                <button class="modal-submit">Proceed</button>
+                <button class="modal-close" data-modal="withdraw-modal">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Fund Modal -->
+        <div id="fund-modal" class="crypto-modal fund-modal hidden">
+            <form class="modal-content">
+                <h2>Fund Wallet</h2>
+                <label for="">
+                    Fund Via <br>
+                    <select name="" id="">
+                        <option value="" selected disabled>Choose option</option>
+                        <option value="">Bank Account</option>
+                    </select>
+                </label>
+                <label for="">
+                    Amount <br>
+                    <div class="wf-amount">
+                        <input type="text" placeholder="0.00">
+                        <span>max</span>
+                    </div>
+                    <p class="wf-min">
+                        Minimum Deposit: 
+                        <span>₦0.00</span>
+                    </p>
+                </label>
+                <button class="modal-submit">Proceed</button>
+                <button class="modal-close" data-modal="fund-modal">Cancel</button>
+            </form>
+        </div>
+
+
+
+
+        <!-- Withdraw BTC Modal -->
+        <div id="crypto-withdraw-modal" class="crypto-modal hidden">
+            <div class="crypto-modal-content">
+                <span class="crypto-modal-close" data-modal="crypto-withdraw-modal">&times;</span>
+                <h2 class="crypto-modal-title">Withdraw BTC</h2>
+                <form id="crypto-withdraw-form">
+                    <label for="crypto-address-format">Select Address Format:</label>
+                    <select id="crypto-address-format" class="crypto-input-field" required>
+                        <option value="crypto-address">Crypto Address</option>
+                        <option value="crypto-domain">Crypto Domain</option>
+                        <option value="username">Username</option>
+                        <option value="email">Email</option>
+                    </select>
+                    <br><br>
+                    <label for="crypto-address">Insert Crypto Address:</label>
+                    <input type="text" id="crypto-address" class="crypto-input-field" placeholder="Enter your crypto address" required>
+                    <br><br>
+                    <div class="crypto-balance-container">
+                        <label for="crypto-btc-address">BTC Amount:</label><br>
+                        <div>
+                            <input type="text" id="crypto-btc-address" class="crypto-input-field" placeholder="Enter Amount" readonly>
+                            <span id="crypto-max-balance-btn" class="crypto-max-balance-btn">Max</span>
+                        </div>
+                    </div>
+                    <div class="crypto-balance-info">
+                        <span class="crypto-available-balance">Available Balance: <span id="crypto-balance-amount">0.00 BTC</span></span>
+                        <button type="button" id="crypto-toggle-balance-visibility" class="crypto-toggle-visibility-btn">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <label for="crypto-min-withdrawal">
+                        Minimum Withdrawal Amount:
+                        <span id="crypto-min-withdrawal" class="crypto-min-amount">0.001 BTC</span>
+                    </label>
+
+                    <button type="submit" class="crypto-withdraw-btn">Withdraw</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- Fund Wallet Modal -->
+        <div id="crypto-funding-modal" class="crypto-funding-modal hiddenindicator">
+            <div class="crypto-funding-modal-content">
+                <span class="crypto-funding-modal-close" data-modal="crypto-funding-modal">&times;</span>
+                <h2 class="crypto-funding-modal-title">Fund Your Wallet</h2>
+                <h3 class="crypto-funding-modal-subtitle">Scan QR Code to Fund</h3>
+
+                <div id="crypto-funding-qr-code" class="crypto-funding-qr-code-container"></div>
+
+                <div class="crypto-funding-address-container">
+                    <label for="crypto-funding-address">Funding Address:</label>
+                    <div class="crypto-funding-address-wrapper">
+                        <span id="crypto-funding-address">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span>
+                        <button id="crypto-funding-copy-address-btn" class="crypto-funding-copy-address-btn">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <span id="crypto-funding-copy-indicator" class="crypto-funding-copy-indicator hiddenindicator">Copied!</span>
+                    </div>
+                </div>
+
+                <p class="crypto-funding-min-funding">Minimum deposit amount: <strong>0.000015 BTC</strong></p>
+            </div>
+        </div>
+
+
+
+        
+
+        
     </div>
+
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/wallet.js"></script>
 </body>
 </html>

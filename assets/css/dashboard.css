@@ -183,7 +183,7 @@ a {
         transform: translateX(-100%);
         transition: .5s;
         cursor: pointer;
-        z-index: 11111;
+        z-index: 2;
     }
 
     .dashboard-sidebar.show {
@@ -240,7 +240,7 @@ a {
 /* slick slider for dashboard */
 
 .slider-container {
-    width: 90%;
+    width: 85%;
     margin: 30px auto;
 }
 
@@ -256,8 +256,8 @@ a {
     align-items: center;
     position: relative;
     margin: 0 5px;
-    min-height: 400px; /* Set a minimum height */
-    max-height: 100vh; /* Ensure it doesn't exceed the viewport */
+    height: 300px;
+    max-height: 300px; /* Ensure it doesn't exceed the viewport */
     background-image: linear-gradient(to bottom right, #ffbf00, #454b1b);
     overflow: hidden;
     border-radius: 10px;
